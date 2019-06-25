@@ -1,0 +1,73 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+span,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    font-family: 'PingFang-SC-Regular', 'PingFang-SC';
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+/* 　　-webkit-user-select: none; */
+}
+
+li,
+ul {
+    list-style: none;
+}
+
+input,
+textarea {
+    border: none;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+input::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #999999;
+}
+
+input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #999999;
+}
+
+input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #999999;
+}
+
+input:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #999999;
+}
+
+input[disabled] {
+    background-color: white;
+}
+

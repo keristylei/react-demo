@@ -1,0 +1,15 @@
+@baseFontSize: 75;
+.px2rem(@name,@px) {
+  @{name}: @px / @baseFontSize * 1rem;
+}
+
+.search-container {
+  .px2rem(padding-right, 25);
+  .px2rem(padding-left, 25);
+  background: #efefef;
+  border-bottom: 1px solid #ddd;
+}
+
+.am-search {
+  padding: 0 !important;
+}

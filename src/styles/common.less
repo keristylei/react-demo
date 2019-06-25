@@ -1,0 +1,651 @@
+html,
+body {
+  margin: 0;
+  position: relative;
+  height: 100% !important;
+  overflow-x: hidden;
+}
+html,
+body,
+div,
+input,
+textarea,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+i,
+u,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+fieldset,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font-family: "PingFang-SC-Regular", "PingFang-SC";
+  font-size: 14px;
+}
+body {
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+ul,
+li {
+  list-style: none;
+}
+input,
+textarea {
+  outline: none;
+  text-indent: none;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background-color: #f5f5f5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="search"],
+input[type="reset"] {
+  -webkit-appearance: none;
+}
+
+textarea {
+  -webkit-appearance: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.o-l {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.d-n {
+  display: none;
+}
+/*通用颜色*/
+.bd-color {
+  color: #333;
+}
+
+/*字体控制*/
+.fw-n {
+  font-weight: normal !important;
+}
+.fw-b {
+  font-weight: bold !important;
+}
+//input框长按的颜色去除
+input,
+textarea,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@baseFontSize: 75;
+.px2rem(@name,@px) {
+  @{name}: @px / @baseFontSize * 1rem;
+}
+
+@keyframes backOpacity {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animation_opactiy {
+  animation: backOpacity 2s ease-in-out infinite;
+}
+/*解决不同分辨率下面1px线变粗问题*/
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-pixel-ratio: 2) {
+  .bd-top,
+  div.tab-nav.tabs {
+    border: 0 !important;
+    background-image: -webkit-linear-gradient(
+      180deg,
+      #e4e4e4,
+      #e4e4e4 50%,
+      transparent 50%
+    );
+    background-image: linear-gradient(
+      180deg,
+      #e4e4e4,
+      #e4e4e4 50%,
+      transparent 50%
+    );
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+
+  .bd-bot,
+  .sheet-control.item-input,
+  .item-timestamp,
+  .item-scope,
+  .scroll .group-menu:last-child {
+    border: 0 !important;
+    background-image: -webkit-linear-gradient(
+      0deg,
+      #e4e4e4,
+      #e4e4e4 50%,
+      transparent 50%
+    );
+    background-image: linear-gradient(
+      0deg,
+      #e4e4e4,
+      #e4e4e4 50%,
+      transparent 50%
+    );
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  .bd-db,
+  .page-header,
+  .sheet-control.SheetGridView {
+    border: 0 !important;
+    background-image: -webkit-linear-gradient(
+        180deg,
+        #e4e4e4,
+        #e4e4e4 50%,
+        transparent 50%
+      ),
+      -webkit-linear-gradient(0deg, #e4e4e4, #e4e4e4 50%, transparent 50%);
+    background-image: linear-gradient(
+        180deg,
+        #e4e4e4,
+        #e4e4e4 50%,
+        transparent 50%
+      ),
+      linear-gradient(0deg, #e4e4e4, #e4e4e4 50%, transparent 50%);
+    background-size: 100% 1px, 100% 1px;
+    background-repeat: no-repeat;
+    background-position: top, bottom;
+  }
+
+  .bd-l {
+    border: 0 !important;
+    background-image: -webkit-linear-gradient(
+      90deg,
+      #e4e4e4,
+      #e4e4e4 50%,
+      transparent 50%
+    );
+    background-image: linear-gradient(
+      90deg,
+      #e4e4e4,
+      #e4e4e4 50%,
+      transparent 50%
+    );
+    background-size: 1px 100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+  }
+
+  .bd-r {
+    border: 0 !important;
+    background-image: -webkit-linear-gradient(
+      270deg,
+      #e4e4e4,
+      #e4e4e4 50%,
+      transparent 50%
+    );
+    background-image: linear-gradient(
+      270deg,
+      #e4e4e4,
+      #e4e4e4 50%,
+      transparent 50%
+    );
+    background-size: 1px 100%;
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+
+  .bd-lr {
+    border: 0 !important;
+    background-image: -webkit-linear-gradient(
+        270deg,
+        #e4e4e4,
+        #e4e4e4 50%,
+        transparent 50%
+      ),
+      -webkit-linear-gradient(90deg, #e4e4e4, #e4e4e4 50%, transparent 50%);
+    background-image: linear-gradient(
+        270deg,
+        #e4e4e4,
+        #e4e4e4 50%,
+        transparent 50%
+      ),
+      linear-gradient(90deg, #e4e4e4, #e4e4e4 50%, transparent 50%);
+    background-size: 1px 100%, 1px 100%;
+    background-repeat: no-repeat;
+    background-position: right top, left top;
+  }
+  .bd-lrtb {
+    border: 0 !important;
+    background-image: -webkit-linear-gradient(
+        180deg,
+        #e4e4e4,
+        #e4e4e4 50%,
+        transparent 50%
+      ),
+      -webkit-linear-gradient(270deg, #e4e4e4, #e4e4e4 50%, transparent 50%),
+      -webkit-linear-gradient(0deg, #e4e4e4, #e4e4e4 50%, transparent 50%),
+      -webkit-linear-gradient(90deg, #e4e4e4, #e4e4e4 50%, transparent 50%);
+    background-image: linear-gradient(
+        180deg,
+        #e4e4e4,
+        #e4e4e4 50%,
+        transparent 50%
+      ),
+      linear-gradient(270deg, #e4e4e4, #e4e4e4 50%, transparent 50%),
+      linear-gradient(0deg, #e4e4e4, #e4e4e4 50%, transparent 50%),
+      linear-gradient(90deg, #e4e4e4, #e4e4e4 50%, transparent 50%);
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+    background-repeat: no-repeat;
+    background-position: top, right top, bottom, left top;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3),
+  only screen and (min-device-pixel-ratio: 3) {
+  .bd-top,
+  div.tab-nav.tabs {
+    border: 0 !important;
+    background-image: -webkit-linear-gradient(
+      180deg,
+      #e4e4e4,
+      #e4e4e4 33.333333%,
+      transparent 33.333333%
+    );
+    background-image: linear-gradient(
+      180deg,
+      #e4e4e4,
+      #e4e4e4 33.333333%,
+      transparent 33.333333%
+    );
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+
+  .bd-bot,
+  .sheet-control.item-input,
+  .item-timestamp,
+  .item-scope,
+  .scroll .group-menu:last-child {
+    border: 0 !important;
+    background-image: -webkit-linear-gradient(
+      0deg,
+      #e4e4e4,
+      #e4e4e4 33.333333%,
+      transparent 33.333333%
+    );
+    background-image: linear-gradient(
+      0deg,
+      #e4e4e4,
+      #e4e4e4 33.333333%,
+      transparent 33.333333%
+    );
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  .bd-l {
+    border: 0 !important;
+    background-image: -webkit-linear-gradient(
+      90deg,
+      #e4e4e4,
+      #e4e4e4 33.333333%,
+      transparent 33.333333%
+    );
+    background-image: linear-gradient(
+      90deg,
+      #e4e4e4,
+      #e4e4e4 33.333333%,
+      transparent 33.333333%
+    );
+    background-size: 1px 100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+  }
+
+  .bd-r {
+    border: 0 !important;
+    background-image: -webkit-linear-gradient(
+      270deg,
+      #e4e4e4,
+      #e4e4e4 33.333333%,
+      transparent 33.333333%
+    );
+    background-image: linear-gradient(
+      270deg,
+      #e4e4e4,
+      #e4e4e4 33.333333%,
+      transparent 33.333333%
+    );
+    background-size: 1px 100%;
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+
+  .bd-lr {
+    border: 0 !important;
+    background-image: -webkit-linear-gradient(
+        270deg,
+        #e4e4e4,
+        #e4e4e4 33.333333%,
+        transparent 33.333333%
+      ),
+      -webkit-linear-gradient(90deg, #e4e4e4, #e4e4e4 33.333333%, transparent
+            33.333333%);
+    background-image: linear-gradient(
+        270deg,
+        #e4e4e4,
+        #e4e4e4 33.333333%,
+        transparent 33.333333%
+      ),
+      linear-gradient(
+        90deg,
+        #e4e4e4,
+        #e4e4e4 33.333333%,
+        transparent 33.333333%
+      );
+    background-size: 1px 100%, 1px 100%;
+    background-repeat: no-repeat;
+    background-position: right top, left top;
+  }
+  .bd-lrtb {
+    border: 0 !important;
+    background-image: -webkit-linear-gradient(
+        180deg,
+        #e4e4e4,
+        #e4e4e4 50%,
+        transparent 50%
+      ),
+      -webkit-linear-gradient(270deg, #e4e4e4, #e4e4e4 50%, transparent 50%),
+      -webkit-linear-gradient(0deg, #e4e4e4, #e4e4e4 50%, transparent 50%),
+      -webkit-linear-gradient(90deg, #e4e4e4, #e4e4e4 50%, transparent 50%);
+    background-image: linear-gradient(
+        180deg,
+        #e4e4e4,
+        #e4e4e4 50%,
+        transparent 50%
+      ),
+      linear-gradient(270deg, #e4e4e4, #e4e4e4 50%, transparent 50%),
+      linear-gradient(0deg, #e4e4e4, #e4e4e4 50%, transparent 50%),
+      linear-gradient(90deg, #e4e4e4, #e4e4e4 50%, transparent 50%);
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+    background-repeat: no-repeat;
+    background-position: top, right top, bottom, left top;
+  }
+}
+
+@media screen and (max-device-width: 321px) {
+  .h2-font {
+    font-size: 15px;
+  }
+  .p-font {
+    font-size: 8px;
+  }
+  .num {
+    font-size: 23px;
+  }
+  .dp-font30 {
+    font-size: 13px;
+  }
+  .dp-font24 {
+    font-size: 10px;
+  }
+  .dp-font32 {
+    font-size: 14px;
+  }
+  .dp-font40 {
+    font-size: 18px;
+  }
+  .dp-font22 {
+    font-size: 9px;
+  }
+  .dp-font26 {
+    font-size: 12px;
+  }
+  .dp-font28 {
+    font-size: 12px;
+  }
+  .dp-font20 {
+    font-size: 8px;
+  }
+  .dp-font18 {
+    font-size: 7px;
+  }
+  .dp-font36 {
+    font-size: 16px;
+  }
+  .dp-font34 {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-device-width: 321px) and (max-device-width: 400px) {
+  .h2-font {
+    font-size: 17px;
+  }
+  .p-font {
+    font-size: 10px;
+  }
+  .num {
+    font-size: 25px;
+  }
+  .dp-font30 {
+    font-size: 15px;
+  }
+  .dp-font24 {
+    font-size: 12px;
+  }
+  .dp-font32 {
+    font-size: 16px;
+  }
+  .dp-font40 {
+    font-size: 20px;
+  }
+  .dp-font22 {
+    font-size: 11px;
+  }
+  .dp-font26 {
+    font-size: 13px;
+  }
+  .dp-font28 {
+    font-size: 14px;
+  }
+  .dp-font20 {
+    font-size: 10px;
+  }
+  .dp-font18 {
+    font-size: 9px;
+  }
+  .dp-font36 {
+    font-size: 18px;
+  }
+  .dp-font34 {
+    font-size: 17px;
+  }
+}
+
+@media screen and (min-device-width: 400px) {
+  .h2-font {
+    font-size: 19px;
+  }
+  .p-font {
+    font-size: 12px;
+  }
+  .num {
+    font-size: 27px;
+  }
+  .dp-font30 {
+    font-size: 17px;
+  }
+  .dp-font24 {
+    font-size: 13px;
+  }
+  .dp-font32 {
+    font-size: 18px;
+  }
+  .dp-font40 {
+    font-size: 22px;
+  }
+  .dp-font22 {
+    font-size: 13px;
+  }
+  .dp-font26 {
+    font-size: 14px;
+  }
+  .dp-font28 {
+    font-size: 16px;
+  }
+  .dp-font20 {
+    font-size: 12px;
+  }
+  .dp-font18 {
+    font-size: 11px;
+  }
+  .dp-font36 {
+    font-size: 20px;
+  }
+  .dp-font34 {
+    font-size: 19px;
+  }
+}
